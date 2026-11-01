@@ -1,0 +1,9 @@
+{
+  "outputDirectory": "public",
+  "rewrites": [
+    {
+      "source": "/api/bookings/:id",
+      "destination": "/api/bookings?id=:id"
+    }
+  ]
+}

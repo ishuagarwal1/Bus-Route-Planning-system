@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BusRoute – Plan your bus journey</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>🚌 BusRoute</h1><nav><a href="#plan">Plan</a><a href="#bookings">My tickets</a><a href="#routes">Routes</a><a href="#admin">Admin</a></nav></header>
+<main>
+  <section id="plan" class="card">
+    <h2>Plan a journey</h2>
+    <div class="grid">
+      <label>From<select id="from"></select></label>
+      <label>To<select id="to"></select></label>
+      <label>Optimise for<select id="by"><option value="distance">Shortest distance</option><option value="time">Fastest time</option><option value="fare">Cheapest fare</option></select></label>
+      <button id="go" class="primary">Find route</button>
+    </div>
+    <div id="result"></div>
+  </section>
+  <section id="bookings" class="card"><h2>My tickets</h2><div class="scroll"><table><thead><tr><th>#</th><th>Passenger</th><th>From</th><th>To</th><th>Km</th><th>Fare</th><th>Booked</th><th></th></tr></thead><tbody id="bk"></tbody></table></div></section>
+  <section id="routes" class="card"><h2>All routes</h2><div class="scroll"><table><thead><tr><th>Bus</th><th>From</th><th>To</th><th>Km</th><th>Min</th><th>Fare</th></tr></thead><tbody id="rt"></tbody></table></div></section>
+  <section id="admin" class="card"><h2>Admin</h2>
+    <div class="grid"><label>Admin password<input id="key" type="password" placeholder="Set ADMIN_KEY in Vercel"></label></div>
+    <h3>Add stop</h3><div class="grid"><label>Name<input id="sname"></label><button id="addStop">Add stop</button></div>
+    <h3>Add route</h3><div class="grid"><label>From<select id="rf"></select></label><label>To<select id="rto"></select></label>
+      <label>Km<input id="rd" type="number" min="1"></label><label>Minutes<input id="rm" type="number" min="1"></label>
+      <label>Fare ₹<input id="rfare" type="number" min="0"></label><label>Bus no.<input id="rbus"></label><button id="addRoute">Add route</button></div>
+  </section>
+</main>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
